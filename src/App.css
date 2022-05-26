@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  background-image: url("./assets/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+.app {
+  max-width: 1300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0 auto;
+  flex-direction: column;
+  font-family: "Fredoka One", cursive;
+  position: relative;
+}
+.app p {
+  margin: 5px;
+}
+/*header image and h1*/
+.header-component-div {
+  display: flex;
+  flex-direction: row;
+}
+h1,h3 {
+  font-weight: lighter;
+}
+h1 {
+  font-size: 40px;
+  margin-left: 10px;
+}
+/*dropdown */
+#name {
+  font-family: "Fredoka One", cursive;
+  background-color: #ea6c4d;
+  color: white;
+  border: none;
+}
+form {
+  width: 100%;
+  height: 80px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+form select {
+  height: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 7px;
+  padding: 2px 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+form select:focus {
+  outline: none;
+}
+.weather-card-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 40vh;
+}
+.weather-card-container .weather-item {
+  flex-basis: 12%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 7px;
+  padding: 10px 0;
+}
+.weather-card-container .weather-item:nth-child(1){
+  border: 3px solid #ea6c4d;
+}
+.weather-item .description {
+  text-transform: capitalize;
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+.weather-item .day,
+.weather-item .temp-max {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #ea6c4d
+}
+/*tablet*/
+@media screen and (max-width: 768px) {
+  body,
+  html {
+    background-image: url("./assets/background-responsive.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+    .header-component-div{
+     display: none;
+    }  
+    form {
+      width: 80%;
+      margin-bottom: 10px;
+    }
+    .weather-card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+    }
+    .weather-card-container .weather-item {
+      margin: 5px 5px;
+    }
+ }
+/*mobile*/
+@media screen and (max-width: 421px) {
+  body,
+  html {
+    background-image: url("./assets/background-responsive.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  form {
+  width: 80%;
+  margin-top: 10px;
+  }
+  form select {
+    margin-right: 10px;
+  }
+  .weather-card-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    overflow: scroll;
+  }
+  .weather-card-container .weather-item {
+    margin: 15px 0;
+    width: 200px;
+    height: 300px;
+  }
+}
